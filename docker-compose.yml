@@ -1,0 +1,11 @@
+version: "3"
+services:
+  alive-check:
+    build: ./alive-check
+    container_name: "alive-check"
+    tty: true
+    volumes:
+      - ./alive-check:/opt/
+    # notify-api.line.meの名前解決ができないので追記
+    extra_hosts:
+      - "notify-api.line.me:203.104.138.174"
